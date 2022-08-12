@@ -1,0 +1,16 @@
+<!-- <div class="post-component" [post]="this.testPost"></div> -->
+<div *ngIf="postsList$ | async as posts">
+  <div
+    class="post-component"
+    [post]="post"
+    *ngFor="let post of posts"
+    [ngStyle]="{'transform': ('rotate(' + post.rotation + 'deg)')}"
+  ></div>
+</div>
+
+<div *ngIf="combinedPosts | async as testPost">
+  {{testPost.toString()}}
+</div>
+
+<button (click)="addPost(this.testPost)">Add</button>
+<app-test-component></app-test-component>

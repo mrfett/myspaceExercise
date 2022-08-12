@@ -1,0 +1,7 @@
+<h1>Test Component Here</h1>
+<p *ngIf="numAction$ | async as numArray">
+  <span *ngFor="let numObj of numArray">
+    {{ numObj.num }} {{ numObj.other }}
+  </span>
+</p>
+<button (click)="addNum()">Add Number</button>
