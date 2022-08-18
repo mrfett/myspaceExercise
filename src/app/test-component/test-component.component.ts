@@ -6,7 +6,7 @@ import { map, tap } from "rxjs/operators";
 @Component({
   selector: "app-test-component",
   templateUrl: "./test-component.component.html",
-  styleUrls: ["./test-component.component.css"]
+  styleUrls: ["./test-component.component.scss"],
 })
 export class TestComponent implements OnInit {
   numArray = [
@@ -15,7 +15,7 @@ export class TestComponent implements OnInit {
     { num: 3, name: "" },
     { num: 4, name: "" },
     { num: 5, name: "" },
-    { num: 6, name: "" }
+    { num: 6, name: "" },
   ];
   numSubject = new BehaviorSubject(this.numArray);
   numAction$ = this.numSubject.asObservable().pipe(
@@ -28,7 +28,7 @@ export class TestComponent implements OnInit {
           return {
             ...obj,
             name: "test",
-            other: "Other " + Math.floor(Math.random() * 10).toString()
+            other: "Other " + Math.floor(Math.random() * 10).toString(),
           };
         }
       });
