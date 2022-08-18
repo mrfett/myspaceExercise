@@ -12,7 +12,8 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 
 const routes: Routes = [
   { path: "home", component: HomePageComponent },
-  { path: "banana", component: PostsListComponent }
+  { path: "", redirectTo: "home", pathMatch: "full" },
+  { path: "posts", component: PostsListComponent },
 ];
 
 @NgModule({
@@ -23,10 +24,10 @@ const routes: Routes = [
     SiteHeaderComponent,
     SiteFooterComponent,
     PostsListComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
