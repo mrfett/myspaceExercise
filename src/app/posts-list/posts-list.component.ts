@@ -6,14 +6,14 @@ import { map } from "rxjs/operators";
 @Component({
   selector: ".posts-list-component",
   templateUrl: "./posts-list.component.html",
-  styleUrls: ["./posts-list.component.css"]
+  styleUrls: ["./posts-list.component.scss"],
 })
 export class PostsListComponent implements OnInit {
   postsSubject = new BehaviorSubject([
     {
       postTitle: "First Post!",
       postText: "This is my first post.",
-      postDate: new Date("8-23-1978")
+      postDate: new Date("8-23-1978"),
     },
     {
       postTitle: "Second Post!",
@@ -23,15 +23,15 @@ export class PostsListComponent implements OnInit {
       Are you ready?
       Alright, go to 1996.
       I go into my first job at the Veejay Hotel in Baltimore, Maryland.`,
-      postDate: new Date("8-1-80")
-    }
+      postDate: new Date("8-1-80"),
+    },
   ]);
   postsList$ = this.postsSubject.asObservable().pipe(
     map((rotatedPosts: []) =>
       rotatedPosts.map((post: Object) => {
         return {
           ...post,
-          rotation: Math.random() * this.rotationScale - this.rotationScale / 2
+          rotation: Math.random() * this.rotationScale - this.rotationScale / 2,
         };
       })
     )
@@ -51,7 +51,7 @@ export class PostsListComponent implements OnInit {
         console.log("Post", post);
         return {
           ...post,
-          rotation: Math.random() * this.rotationScale - this.rotationScale / 2
+          rotation: Math.random() * this.rotationScale - this.rotationScale / 2,
         };
       })
     )
@@ -64,7 +64,7 @@ export class PostsListComponent implements OnInit {
     const tempPost = {
       postTitle: "Test",
       postDate: new Date(),
-      postText: "this is a test"
+      postText: "this is a test",
     };
     const currentValues = this.postsSubject.getValue();
     const newValues = [...currentValues, tempPost];
