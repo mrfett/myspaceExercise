@@ -110,5 +110,10 @@
       }
     }
   },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  },
   "defaultProject": "my-space"
 }
