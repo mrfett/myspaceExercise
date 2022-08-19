@@ -9,11 +9,13 @@ import { SiteHeaderComponent } from "./site-header/site-header.component";
 import { SiteFooterComponent } from "./site-footer/site-footer.component";
 import { PostsListComponent } from "./posts-list/posts-list.component";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
+import { MediaListComponent } from './media-list/media-list.component';
 
 const routes: Routes = [
   { path: "home", component: HomePageComponent },
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "posts", component: PostsListComponent },
+  { path: "media", component: MediaListComponent },
 ];
 
 @NgModule({
@@ -25,6 +27,7 @@ const routes: Routes = [
     SiteFooterComponent,
     PostsListComponent,
     HomePageComponent,
+    MediaListComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
