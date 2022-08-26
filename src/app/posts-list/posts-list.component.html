@@ -7,10 +7,10 @@
     [ngStyle]="{'transform': ('rotate(' + post.rotation + 'deg)')}"
   ></div>
 </div>
-
+<!-- 
 <div *ngIf="combinedPosts | async as testPost">
   {{testPost.toString()}}
-</div>
+</div> -->
 
-<button (click)="addPost(this.testPost)">Add</button>
-<app-test-component></app-test-component>
+<button (click)="addNewPost()">Add</button>
+

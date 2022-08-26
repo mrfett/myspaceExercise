@@ -84,6 +84,15 @@ export class PostsListComponent implements OnInit {
     this.numListSubject.next([...this.numListSubject.getValue(), newNum]);
   };
 
+  addNewPost = () => {
+    const post = {
+        postTitle: "No Title Set",
+        postText: "No Text Set",
+        postDate: new Date()
+    }
+    this.postService.addPost(post);
+  }
+
   constructor(private postService: PostService) {}
 
   ngOnInit(): void {
