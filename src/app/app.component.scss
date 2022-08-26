@@ -1,5 +1,7 @@
+@import "style-assets";
+
 :host {
   display: block;
-  background-color: #A48761;
+  background-color: $bg-base;
   background-image: url("../assets/images/bg/bg-manilla.png");
 }

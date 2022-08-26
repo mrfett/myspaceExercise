@@ -1,9 +1,26 @@
+@import "style-assets";
+
 :host {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #5A3A26;
+  background: $bg-strong url("../../assets/images/bg/bg-manilla.png");
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent url("../../assets/images/bg/header-bg-overlay-1.png") no-repeat;
+    background-size: cover;
+    mix-blend-mode: overlay;
+    opacity: .9;
+  }
 }
 
 h1 {
@@ -12,7 +29,6 @@ h1 {
     line-height: 1.2;
     font-family: 'Splash';
     color: white;
-    background-color: #5A3A26;
 }
 
 nav {
