@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
+import { PostService } from "../post.service";
 import { Post } from "../post";
 import { map } from "rxjs/operators";
 
@@ -9,6 +10,7 @@ import { map } from "rxjs/operators";
   styleUrls: ["./posts-list.component.scss"],
 })
 export class PostsListComponent implements OnInit {
+  posts: Post[] = [];
   postsSubject = new BehaviorSubject([
     {
       postTitle: "First Post!",
@@ -36,6 +38,11 @@ export class PostsListComponent implements OnInit {
       })
     )
   );
+
+  getPosts(): void {
+    this.postService.getPosts()
+    .subscribe(posts => this.posts = posts);
+  }
 
   numListSubject = new BehaviorSubject([1, 2, 3, 4]);
   numListAction? = this.numListSubject.asObservable();
@@ -77,7 +84,9 @@ export class PostsListComponent implements OnInit {
     this.numListSubject.next([...this.numListSubject.getValue(), newNum]);
   };
 
-  // constructor() { }
+  constructor(private postService: PostService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getPosts();
+  }
 }
