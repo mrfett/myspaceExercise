@@ -86,8 +86,8 @@ export class PostsListComponent implements OnInit {
 
   addNewPost = () => {
     const post = {
-        postTitle: "No Title Set",
-        postText: "No Text Set",
+        postTitle: "Brand New Post!",
+        postText: "This is a hardcoded post to show the add functionality. I think it is working great.",
         postDate: new Date()
     }
     this.postService.addPost(post);
