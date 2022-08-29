@@ -1,3 +1,7 @@
-<p>media works!</p>
-<div *ngFor="let media of mediaService.mediaList">{{ media }}</div>
-<button (click)="mediaService.add('Test Photo')">Add Media</button>
+<ng-container *ngIf="media">
+    <h3 class="title">{{ media.mediaTitle }}</h3>
+    <img src="{{media.mediaUrl}}" alt="{{ media.mediaAltText }}" />
+</ng-container>
+<ng-container *ngElse>
+    Error getting media.
+</ng-container>

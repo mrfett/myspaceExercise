@@ -1,2 +1,7 @@
-<p>media-list works!</p>
-<app-media></app-media>
+<h2>Photos From My Travels</h2>
+<div
+    class="app-media"
+    *ngFor="let media of mediaList"
+    [media]="media"
+    [ngStyle]="{'transform': ('rotate(' + media.rotation + 'deg)')}"></div>
+<button (click)="this.addMedia()">Add Media</button>

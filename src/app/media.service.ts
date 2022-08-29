@@ -1,19 +1,25 @@
 import { Injectable } from '@angular/core';
+import { Media } from "./media";
 import { MEDIA } from "./data/initialMedia";
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MediaService {
 
-  mediaList: string[] = MEDIA;
+  // mediaList: Media[] = MEDIA;
 
-  add(media: string) {
-    this.mediaList.push(media);
+  private mediaSubject = new BehaviorSubject(MEDIA);
+  private mediaAction = this.mediaSubject.asObservable();
+
+  getMediaList(): Observable<Media[]> {
+    return this.mediaAction;
   }
 
-  clear() {
-    this.mediaList = [];
+  addMedia(newMedia: Media) {
+    const newMediaList = [...this.mediaSubject.getValue(), newMedia];
+    this.mediaSubject.next(newMediaList);
   }
 
   constructor() { }
