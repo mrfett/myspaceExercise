@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Post } from './post';
 import { POSTS } from './data/initialPosts';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,6 @@ export class PostService {
   private postsSubject = this.postsAction.asObservable();
 
   getPosts(): Observable<Post[]> {
-    // const posts = of(POSTS);
     return this.postsSubject;
   }
 
