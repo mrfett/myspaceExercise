@@ -10,6 +10,7 @@ import { SiteFooterComponent } from "./site-footer/site-footer.component";
 import { PostsListComponent } from "./posts-list/posts-list.component";
 import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { MediaListComponent } from './media-list/media-list.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 const routes: Routes = [
   { path: "home", component: HomePageComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
     PostsListComponent,
     HomePageComponent,
     MediaListComponent,
+    NavigationComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes)],
   providers: [],
