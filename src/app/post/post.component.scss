@@ -1,6 +1,8 @@
+@import "style-assets";
+
 :host {
   background: #f3f3f3;
-  box-shadow: 0.25rem 0 1rem 0 rgba(0, 0, 0, 0.25);
+  box-shadow: $level-1;
   padding: 2rem;
   align-self: stretch;
 }
