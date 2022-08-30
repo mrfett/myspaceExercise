@@ -10,7 +10,6 @@ import { map } from "rxjs/operators";
   styleUrls: ["./posts-list.component.scss"],
 })
 export class PostsListComponent implements OnInit {
-  postsWithRotation: Object[] = [];
   posts: Post[] = [];
 
   getPosts(): void {
