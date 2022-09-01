@@ -1,6 +1,6 @@
 <ng-container *ngIf="media">
-    <h3 class="title">{{ media.mediaTitle }}</h3>
     <img src="{{media.mediaUrl}}" alt="{{ media.mediaAltText }}" />
+    <h3 class="title">{{ media.mediaTitle }}</h3>
 </ng-container>
 <ng-container *ngElse>
     Error getting media.
