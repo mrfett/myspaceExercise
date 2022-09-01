@@ -29,7 +29,7 @@ export class PostsListComponent implements OnInit {
         postTitle: "Brand New Post!",
         postText: "This is a hardcoded post to show the add functionality. I think it is working great.",
         postDate: new Date(),
-        rotation: rotation
+        // rotation: rotation
     }
     this.postService.addPost(post);
   }

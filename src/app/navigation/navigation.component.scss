@@ -11,4 +11,9 @@
 
 .nav-link {
   color: white;
+
+  &.active-link {
+    font-weight: 800;
+    letter-spacing: .0125em;
+  }
 }

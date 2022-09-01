@@ -18,7 +18,13 @@ export class PostService {
 
   addPost(post: Post) {
     const currentValues = this.postsAction.getValue();
-    const newValue = [...currentValues, post];
+    let rotatedPost = {...post};
+    if (!post.hasOwnProperty("rotation")) {
+      const rotationScale = 2;
+      const randomRotation = Math.random() * (rotationScale - (0 - rotationScale)) + (0 - rotationScale);
+      rotatedPost = {...post, rotation: randomRotation};
+    } 
+    const newValue = [...currentValues, rotatedPost];
     this.postsAction.next(newValue);
   }
 

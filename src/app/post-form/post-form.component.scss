@@ -1,0 +1,21 @@
+:host {
+    align-self: stretch;
+    background-color: white;
+    padding: 2rem;
+}
+
+.new-post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.post-text {
+    resize: vertical;
+}
