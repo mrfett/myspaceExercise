@@ -9,8 +9,8 @@ import { map } from 'rxjs/operators';
 })
 export class PostService {
 
-  private postsAction = new BehaviorSubject(POSTS);
-  private postsSubject = this.postsAction.asObservable();
+  private postsAction; 
+  private postsSubject;
 
   getPosts(): Observable<Post[]> {
     return this.postsSubject;
@@ -25,8 +25,25 @@ export class PostService {
       rotatedPost = {...post, rotation: randomRotation};
     } 
     const newValue = [...currentValues, rotatedPost];
+    localStorage.setItem('posts', JSON.stringify(newValue));
     this.postsAction.next(newValue);
   }
 
-  constructor() { }
+  constructor() {
+    const storedPosts = localStorage.getItem('posts');
+    console.log("Stored Posts", JSON.parse(storedPosts));
+
+    if (storedPosts === null) {
+      this.postsAction = new BehaviorSubject(POSTS);
+      this.postsSubject = this.postsAction.asObservable();
+        
+    } else {
+      let posts = JSON.parse(storedPosts);
+      posts.map((post) => {post.postDate = new Date(post.postDate)});
+      console.log("Stored", posts);
+      console.log("Original", POSTS);
+      this.postsAction = new BehaviorSubject(posts);
+      this.postsSubject = this.postsAction.asObservable();
+    }
+  }
 }
