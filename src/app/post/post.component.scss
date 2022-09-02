@@ -13,17 +13,28 @@ $paper-margin-line-color: #C8767870;
 :host {
   background: #f3f3f3;
   box-shadow: $level-1;
-  padding: #{$card-margin-scale * $paper-line-height} #{$card-margin-scale * $paper-line-height} #{$card-margin-scale * $paper-line-height} calc(#{$card-margin-scale * $paper-line-height} + #{$card-margin-scale * $paper-line-height }) ;
+  padding: #{$card-margin-scale * $paper-line-height} #{$card-margin-scale * $paper-line-height} #{$card-margin-scale * $paper-line-height} calc(#{$paper-margin-scale * $paper-line-height} + #{$card-margin-scale * $paper-line-height }) ;
   align-self: stretch;
   background-color: #fff;
   background-image:
-  linear-gradient(90deg, transparent $paper-line-height * 3, $paper-margin-line-color $paper-line-height * 3, $paper-margin-line-color calc(#{$paper-line-height} * 3 + 2px), transparent calc(#{$paper-line-height} * 3 + 2px)),
+  // linear-gradient(90deg, transparent $paper-line-height * 3, $paper-margin-line-color $paper-line-height * 3, $paper-margin-line-color calc(#{$paper-line-height} * 3 + 2px), transparent calc(#{$paper-line-height} * 3 + 2px)),
   linear-gradient($paper-line-color .1rem, transparent .1rem);
   background-origin: 4rem;
   background-size: 100% $paper-line-height;
   line-height: $paper-line-height;
   font-family: 'Nothing You Could Do';
   font-size: 18px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: $paper-margin-scale * $paper-line-height;
+    width: $paper-margin-line-width;
+    background: $paper-margin-line-color;
+  }
 }
 * {
   text-align: left;

@@ -1,3 +1,5 @@
+@import "style-assets";
+
 :host {
     display: flex;
     flex-direction: column;
@@ -6,9 +8,5 @@
 }
 
 h2 {
-    font-family: 'Special Elite';
-    font-weight: 400;
-    font-size: 32px;
-    color: white;
-    margin: 0;
+    @extend %header-1;
 }
