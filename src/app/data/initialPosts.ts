@@ -38,7 +38,7 @@ export const POSTS: Post[] = [
         
         But I'll try not to drop my knitting.`,
         postDate: new Date("1-4-83"),
-        rotation: -0.17
+        rotation: -.87
       },
       {
         postTitle: "Favorite Story",
@@ -54,7 +54,7 @@ export const POSTS: Post[] = [
         
         Never saw that one coming.`,
         postDate: new Date("June 12, 2014"),
-        rotation: -0.17
+        rotation: 1.2
       }
 
       
