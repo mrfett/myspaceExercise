@@ -4,7 +4,7 @@ export const POSTS: Post[] = [
     {
         postTitle: "This is the First Post!",
         postText: "This is my first post.",
-        postDate: new Date("8-23-1978"),
+        postDate: new Date("August 23, 1978"),
         rotation: -0.65
       },
       {
@@ -15,7 +15,7 @@ export const POSTS: Post[] = [
         Are you ready?
         Alright, go to 1996.
         I go into my first job at the Veejay Hotel in Baltimore, Maryland.`,
-        postDate: new Date("8-1-80"),
+        postDate: new Date("August 01, 1980"),
         rotation: 0.25
       },
       {
@@ -37,7 +37,7 @@ export const POSTS: Post[] = [
         I won't have time to work on it.
         
         But I'll try not to drop my knitting.`,
-        postDate: new Date("1-4-83"),
+        postDate: new Date("January 04, 1983"),
         rotation: -.87
       },
       {
