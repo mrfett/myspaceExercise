@@ -10,6 +10,11 @@
     padding: 1rem;
 }
 
+img {
+    max-width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
 .title {
     font-family: 'Nanum Pen Script';
     font-size: 2rem;
