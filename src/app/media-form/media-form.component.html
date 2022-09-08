@@ -1,0 +1,11 @@
+<form class="new-media-form" [formGroup]="newMediaForm" (ngSubmit)="submitMedia()">
+    <div class="form-input">
+        <label for="mediaTitle">Title</label>
+        <input id="mediaTitle" type="text" formControlName="mediaTitle" />
+    </div>
+    <div class="form-input">
+        <label for="mediaAltText">Post</label>
+        <textarea class="media-alt-text" id="mediaAltText" formControlName="mediaAltText"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+</form>

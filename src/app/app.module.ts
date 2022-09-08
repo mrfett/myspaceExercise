@@ -13,6 +13,7 @@ import { HomePageComponent } from "./pages/home-page/home-page.component";
 import { MediaListComponent } from './media-list/media-list.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { PostFormComponent } from './post-form/post-form.component';
+import { MediaFormComponent } from './media-form/media-form.component';
 
 const routes: Routes = [
   { path: "home", component: HomePageComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
     MediaListComponent,
     NavigationComponent,
     PostFormComponent,
+    MediaFormComponent,
   ],
   imports: [BrowserModule, ReactiveFormsModule, RouterModule.forRoot(routes)],
   providers: [],

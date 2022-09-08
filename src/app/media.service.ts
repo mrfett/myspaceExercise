@@ -10,8 +10,8 @@ export class MediaService {
 
   // mediaList: Media[] = MEDIA;
 
-  private mediaSubject = new BehaviorSubject(MEDIA);
-  private mediaAction = this.mediaSubject.asObservable();
+  private mediaSubject;
+  private mediaAction;
 
   getMediaList(): Observable<Media[]> {
     return this.mediaAction;
@@ -22,5 +22,17 @@ export class MediaService {
     this.mediaSubject.next(newMediaList);
   }
 
-  constructor() { }
+  constructor() {
+    const storedMediaList = localStorage.getItem('mediaList');
+    if ( storedMediaList === null) {
+      this.mediaSubject = new BehaviorSubject(MEDIA);
+      this.mediaAction = this.mediaSubject.asObservable();
+    } else {
+      let mediaList = JSON.parse(storedMediaList).map((media) => {
+        media.postDate = new Date(media.postDate);
+      });
+      this.mediaSubject = new BehaviorSubject(mediaList);
+      this.mediaAction = this.mediaSubject.asObservable();
+    }
+  }
 }
