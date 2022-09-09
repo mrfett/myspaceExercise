@@ -1,0 +1,16 @@
+:host {
+    background: white;
+    padding: 2rem;
+    width: calc(100% - 2rem);
+}
+
+.new-media-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+}
