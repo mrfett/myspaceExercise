@@ -18,7 +18,15 @@ export class MediaService {
   }
 
   addMedia(newMedia: Media) {
-    const newMediaList = [...this.mediaSubject.getValue(), newMedia];
+    // get random rotation
+    const randomNumber = Math.round(Math.random() * 1000);
+    const rotationScale = 2;
+
+    // get random image url
+    const randomImageUrl = "https://loremflickr.com/640/480/time%20travel?" + randomNumber.toString()
+    
+    const randomRotation = Math.random() * (rotationScale - (0 - rotationScale)) + (0 - rotationScale);
+    const newMediaList = [...this.mediaSubject.getValue(), {...newMedia, rotation: randomRotation, mediaUrl: randomImageUrl}];
     this.mediaSubject.next(newMediaList);
   }
 

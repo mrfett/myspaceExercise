@@ -18,9 +18,7 @@ export class MediaFormComponent implements OnInit {
 
   submitMedia() {
     const newDate = new Date();
-    const randomNumber = Math.round(Math.random() * 1000);
-    console.log("Random Number", randomNumber);
-    const newMedia = {...new Media(), ...this.newMediaForm.value, mediaDate: newDate, mediaUrl: "https://loremflickr.com/640/480/time%20travel?" + randomNumber.toString()};
+    const newMedia = {...new Media(), ...this.newMediaForm.value, mediaDate: newDate};
     this.mediaService.addMedia(newMedia);
 
     this.newMediaForm.reset();
