@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import '../../../magic-ball/magic-ball.js'
 
 @Component({
   selector: ".app-home-page",
