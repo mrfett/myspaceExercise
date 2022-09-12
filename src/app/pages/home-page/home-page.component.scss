@@ -1,18 +1,52 @@
+@import "style-assets";
+
+$paper-line-height: 1.5rem;
+$paper-line-width: 0.1rem;
+$paper-line-color: #72928f25;
+
+$card-margin-scale: 2;
+
+$paper-margin-scale: 3;
+$paper-margin-line-width: 0.1rem;
+$paper-margin-line-color: #c8767870;
+
 :host {
-    display: flex;
-    flex-direction: row;
-    padding: 2rem;
-    gap: 2rem;
-    max-width: 960px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .sidebar {
-    flex-basis: 33%;
+  flex-basis: 33%;
 }
 
 .main {
   flex-grow: 1;
   flex-shrink: 1;
   flex-basis: 67%;
+}
+
+.blurb {
+  margin-bottom: 4rem;
+
+  background: #f3f3f3;
+  box-shadow: $level-1;
+  padding: 1.5rem;
+  align-self: stretch;
+  background-color: #fff;
+  font-family: "Special Elite";
+  transform: rotate(-1deg);
+
+  h2, p {
+    font-size: 18px;
+    line-height: 130%;
+  }
+
+  h2 {
+    color: $accent-primary-500;
+    margin-bottom: 1.5rem;
+  }
 }
