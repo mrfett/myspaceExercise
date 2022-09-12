@@ -1,7 +1,10 @@
+@import "style-assets";
+
 :host {
     background: white;
     padding: 2rem;
     width: calc(100% - 2rem);
+    box-shadow: $level-1;
 }
 
 .new-media-form {

@@ -1,7 +1,10 @@
+@import "style-assets";
+
 :host {
     align-self: stretch;
     background-color: white;
     padding: 2rem;
+    box-shadow: $level-1;
 }
 
 .new-post-form {
@@ -18,4 +21,5 @@
 
 .post-text {
     resize: vertical;
+    min-height: 8rem;
 }
