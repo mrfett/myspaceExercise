@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { Post } from './post';
 import { POSTS } from './data/initialPosts';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -14,6 +14,20 @@ export class PostService {
 
   getPosts(): Observable<Post[]> {
     return this.postsSubject;
+  }
+
+  getXPosts(postCount?:number): Observable<Post[]> {
+    if (!postCount) {
+      console.log("No Count");
+      return this.postsSubject;
+    } else {
+      return this.postsSubject.pipe(
+        map((postArray:Post[]) => {
+          return postArray.slice(0, postCount);
+        })
+      )
+    }
+    
   }
 
   addPost(post: Post) {

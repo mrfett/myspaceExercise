@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { PostService } from "../post.service";
 import { Post } from "../post";
@@ -11,9 +11,10 @@ import { map } from "rxjs/operators";
 })
 export class PostsListComponent implements OnInit {
   posts: Post[] = [];
+  @Input() postCount: number;
 
   getPosts(): void {
-    this.postService.getPosts()
+    this.postService.getXPosts(5)
     .subscribe(posts => this.posts = posts);
   }
 
