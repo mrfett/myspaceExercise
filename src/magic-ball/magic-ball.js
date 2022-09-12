@@ -49,36 +49,83 @@ class AskTheEightBall extends HTMLElement {
     const magicBall = document.createElement("div");
     magicBall.innerHTML = `
       <style>
+        .eight-ball--heading {
+          text-align: center;
+          font-size: 1.5rem;
+          font-weight: bold;
+          margin-top: 3rem;
+        }
+
         .eight-ball {
+          appearance: none;
           position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           width: 20rem;
           height: 20rem;
           border-radius: 50%;
           background-color: black;
           background: rgb(93,93,93);
           background: radial-gradient(circle, rgba(93,93,93,1) 0%, rgba(17,17,17,1) 100%);
+          margin-top: 1.5rem;
         }
-        
-        .eight-ball:before {
-          content: '';
-          display: block;
+
+        .eight-ball--answer {
           position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          color: white;
+
           width: 10rem;
           height: 10rem;
+          border-radius: 50%;
+          background-color: #050505;
+        }
+
+        .eight-ball--answer::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: calc(100% - 16px);
+          height: calc(100% - 16px);
+          border: 8px solid #0F0F0F;
+          border-radius: 50%;
+        }
+
+        #answer {
+          z-index: 0;
+          font-size: .75rem;
+          width: 4rem;
+          text-align: center;
+          margin-top: 3rem;
+        }
+
+        #answer::before {
+          content: '';
+          display: block;
+          position: absolute;
+          z-index: -1;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          border-radius: 50%;
-          background-color: white;
+
+          width: 0;
+          height: 0;
+          margin-top: .5rem; 
+          border-left: 3.25rem solid transparent;
+          border-right: 3.25rem solid transparent;
+          
+          border-top: 6rem solid #1D23E9;
         }
       </style>
-      <form method="get">
-        <label for="question">What do you want to ask the magic 8 ball?</label>
-        <input type="text" id="question" name="question" />
-        <button type="submit" id="ask">Ask</button>
-      </form>
-      <p>The Eight Ball Says <span id="answer"></span></p>
-      <div class="eight-ball"></div>
+      <p class="eight-ball--heading">Ask the Magic&nbsp;Eight&nbsp;Ball</p>
+      <button class="eight-ball">
+        <div class="eight-ball--answer">
+          <p id="answer">Click Me</p>
+        </div>
+      </button>
     `;
 
     const shadowRoot = this.attachShadow({ mode: "open" });
