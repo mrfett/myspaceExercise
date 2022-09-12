@@ -23,7 +23,7 @@ export class MediaService {
     const rotationScale = 2;
 
     // get random image url
-    const randomImageUrl = "https://loremflickr.com/640/480/time%20travel?" + randomNumber.toString()
+    const randomImageUrl = "https://loremflickr.com/640/480/time?" + randomNumber.toString()
 
     const randomRotation = Math.random() * (rotationScale - (0 - rotationScale)) + (0 - rotationScale);
     const newMediaList = [...this.mediaSubject.getValue(), {...newMedia, rotation: randomRotation, mediaUrl: randomImageUrl}];
