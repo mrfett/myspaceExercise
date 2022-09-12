@@ -14,7 +14,7 @@ export class PostsListComponent implements OnInit {
   @Input() postCount: number;
 
   getPosts(): void {
-    this.postService.getXPosts(5)
+    this.postService.getXPosts(this.postCount)
     .subscribe(posts => this.posts = posts);
   }
 
