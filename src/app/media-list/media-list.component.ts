@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MediaService  } from '../media.service';
 import { Media } from "../media";
 import { take } from "rxjs/operators";
@@ -10,6 +10,7 @@ import { take } from "rxjs/operators";
 })
 export class MediaListComponent implements OnInit {
   mediaList: Media[] = [];
+  @Input() mediaCount: number;
 
   constructor(private mediaService: MediaService) { }
 
@@ -18,10 +19,7 @@ export class MediaListComponent implements OnInit {
   }
 
   getMedia(): void {
-    this.mediaService.getMediaList().pipe(
-      take(4)
-    )
-    .subscribe(mediaList => this.mediaList = mediaList);
+    this.mediaService.getXMedia(this.mediaCount).subscribe(mediaList => this.mediaList = mediaList);
   }
 
   addMedia(): void {
@@ -39,3 +37,7 @@ export class MediaListComponent implements OnInit {
   }
 
 }
+function Import() {
+  throw new Error('Function not implemented.');
+}
+

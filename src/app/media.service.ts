@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Media } from "./media";
 import { MEDIA } from "./data/initialMedia";
 import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,16 @@ export class MediaService {
 
   getMediaList(): Observable<Media[]> {
     return this.mediaAction;
+  }
+
+  getXMedia(mediaCount?: number): Observable<Media[]> {
+    if (!mediaCount) {
+      return this.mediaAction;
+    } else {
+      return this.mediaAction.pipe(
+        map((mediaArray: Media[]) => mediaArray.slice(0, mediaCount))
+      );
+    }
   }
 
   addMedia(newMedia: Media) {
